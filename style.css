@@ -1,0 +1,295 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    background-color: #121212; /* Fondo negro oscuro */
+    color: #e0e0e0;  /* Gris claro para el texto */
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #1f1f1f;  /* Gris oscuro para el sidebar */
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 0 15px rgba(0, 255, 0, 0.3); /* Sombra verde neón */
+}
+
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar ul li {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #00ff00;  /* Verde neón */
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    display: block;
+    padding: 12px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #009900;  /* Verde más oscuro */
+    color: #fff;
+}
+
+/* Contenido */
+.content {
+    margin-left: 250px;
+    padding: 60px;
+    width: calc(100% - 250px);
+    overflow-y: auto;
+    height: 100vh;
+    box-shadow: 0 4px 6px rgba(0, 255, 255, 0.2); /* Sombra cian */
+}
+
+/* Secciones */
+.resume-section {
+    margin-bottom: 80px;
+}
+
+/* Estilo mejorado para el nombre */
+.name-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 15px rgba(0, 255, 255, 0.7); /* Sombra cian intensa */
+    color: #e0e0e0;  /* Gris claro */
+}
+
+.name-highlight {
+    color: #00ff00;  /* Verde neón */
+}
+
+/* Botón de descarga */
+.cv-button {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #00ff00;  /* Verde neón */
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    border: 2px solid #00ff00;
+    box-shadow: 2px 2px 5px rgba(0, 255, 0, 0.6);
+    transition: all 0.3s ease;
+}
+
+.cv-button:hover {
+    background-color: #009900;  /* Verde más oscuro */
+    color: #fff;
+    border: 2px solid #009900;
+}
+
+/* ====== BOTÓN DE MENÚ (Solo en pantallas pequeñas) ====== */
+#menu-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#menu-toggle i {
+    font-size: 24px;
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #1e1e1e;  /* Gris más oscuro */
+    color: white;
+    padding-top: 20px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 3px 0 15px rgba(0, 255, 0, 0.4);  /* Sombra verde neón */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+}
+
+.sidebar ul li a {
+    font-size: 1em; /* Antes 1.3em */
+    padding: 8px;    /* Menor padding */
+}
+
+
+.sidebar ul li a:hover {
+    background: rgba(0, 255, 0, 0.2);  /* Verde suave */
+}
+
+/* ====== RESPONSIVE: CONVIERTE EL SIDEBAR EN MENÚ ====== */
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        left: -250px;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .content.sidebar-open {
+        margin-left: 250px;
+    }
+}
+
+/* Aumentar tamaño de los íconos en la barra lateral */
+.sidebar ul li a i {
+    font-size: 1.8em;
+}
+
+/* Aumentar tamaño del ícono del botón de menú */
+#menu-toggle i {
+    font-size: 40px;
+}
+
+/* Ajuste de tarjetas del portafolio */
+.card {
+    display: flex;
+    flex-direction: row; /* Disposición horizontal */
+    background-color: #1a1a2e;  /* Azul oscuro casi negro */
+    color: #e0e0e0;  /* Gris claro */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 255, 0, 0.4); /* Sombra verde neón */
+}
+
+.card-img-top {
+    width: 20%;  /* Tamaño de la imagen */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background-color: #2b2b44;  /* Fondo gris oscuro */
+    padding: 10px;
+}
+
+.card-body {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #00ff00;  /* Verde neón */
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #c0c0c0;  /* Gris claro */
+    margin-bottom: 15px;
+}
+
+.lenguajes img {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+/* Estilo para los iconos de enlace */
+.link-group {
+    display: flex;
+    flex-direction: column; /* Columna para los íconos */
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.link-group i {
+    font-size: 1.5rem;
+    color: #00ff00;  /* Verde neón */
+    transition: color 0.2s ease;
+}
+
+.link-group i:hover {
+    color: #00ffff;  /* Cian neón */
+}
+
+/* Estilo específico para el icono de GitHub */
+.link-group .github-icon {
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Ajuste adicional de margen en la parte inferior para asegurar que el contenido no se solape */
+.card-body {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Estilo para las etiquetas p */
+p {
+    color: #00ffff;  /* Cian neón */
+}
+.profile-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.profile-image {
+    width: 70%;
+    max-width: 170px;              /* Evita que se haga muy grande */
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;           /* Esquinas suaves pero no redondas */
+    border: 2px solid #00ff00;     /* Borde verde neón */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); /* Sombra suave neón */
+    transition: transform 0.3s ease;
+}

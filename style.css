@@ -293,3 +293,99 @@ p {
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); /* Sombra suave neón */
     transition: transform 0.3s ease;
 }
+
+/* Añade esto al final de tu archivo CSS para responsividad adicional */
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .profile-container {
+        padding: 0;
+    }
+
+    .link-group {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+/*
+@media (max-width: 480px) {
+    .name-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .sidebar ul li a {
+        font-size: 0.9em;
+        padding: 6px;
+    }
+
+    .cv-button {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 15px;
+    background-color: #1f1f1f;
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    z-index: 1001;
+    padding: 15px;
+}
+
+.mobile-nav ul {
+    list-style: none;
+}
+
+.mobile-nav ul li {
+    margin: 10px 0;
+}
+
+.mobile-nav ul li a {
+    color: #00ff00;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+}
+
+.mobile-nav ul li a:hover {
+    color: #00ffff;
+}
+
+@media (max-width: 768px) {
+    .mobile-nav.show {
+        display: block;
+    }
+}*/
